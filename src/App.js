@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import Header from "./components/Header";
+import UserCard from "./components/UserCard";
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -16,15 +18,20 @@ function App() {
 
   return (
     <div>
-      <h1>Users</h1>
+      <Header />
       {loading ? (
         <p>Loading...</p>
       ) : (
-        <ul>
+        <div>
           {users.map((user) => (
-            <li key={user.id}>{user.name}</li>
+            <UserCard
+              key={user.id}
+              name={user.name}
+              email={user.email}
+              phone={user.phone}
+            />
           ))}
-        </ul>
+        </div>
       )}
     </div>
   );
