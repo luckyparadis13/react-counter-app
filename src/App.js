@@ -1,39 +1,23 @@
-import { useState, useEffect } from "react";
-import Header from "./components/Header";
-import UserCard from "./components/UserCard";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Projects from "./pages/Projects";
 
 function App() {
-  const [users, setUsers] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    async function getUsers() {
-      let response = await fetch("https://jsonplaceholder.typicode.com/users");
-      let data = await response.json();
-      setUsers(data);
-      setLoading(false);
-    }
-    getUsers();
-  }, []);
-
   return (
-    <div>
-      <Header />
-      {loading ? (
-        <p>Loading...</p>
-      ) : (
-        <div>
-          {users.map((user) => (
-            <UserCard
-              key={user.id}
-              name={user.name}
-              email={user.email}
-              phone={user.phone}
-            />
-          ))}
-        </div>
-      )}
-    </div>
+    <BrowserRouter>
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
+        <Link to="/projects">Projects</Link>
+      </nav>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/projects" element={<Projects />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
