@@ -1,27 +1,25 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
-  const [people, setPeople] = useState(["Lucky", "Alex", "Linda"]);
-  const [input, setInput] = useState("");
+  const [users, setUsers] = useState([]);
 
-  function addPerson() {
-    if (input === "") return;
-    setPeople([...people, input]);
-    setInput("");
-  }
+  useEffect(() => {
+    async function getUsers() {
+      let response = await fetch("https://jsonplaceholder.typicode.com/users");
+      let data = await response.json();
+      setUsers(data);
+    }
+    getUsers();
+  }, []);
 
   return (
     <div>
-      <h1>People List</h1>
-      <input
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-        placeholder="Add a name..."
-      />
-      <button onClick={addPerson}>Add</button>
+      <h1>Users</h1>
       <ul>
-        {people.map((person, index) => (
-          <li key={index}>{person}</li>
+        {users.map((user) => (
+          <li key={user.id}>
+            <strong>{user.name}</strong> — {user.email}
+          </li>
         ))}
       </ul>
     </div>
