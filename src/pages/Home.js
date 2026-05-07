@@ -1,8 +1,13 @@
+import { useContext } from "react";
+import UserContext from "../UserContext";
+
 function Home() {
+  const user = useContext(UserContext);
+
   return (
     <div>
-      <h1>Welcome to my Portfolio!</h1>
-      <p>I'm Lucky, a junior web developer based in San Francisco.</p>
+      <h1>Welcome, {user.name}!</h1>
+      <p>{user.role} based in San Francisco.</p>
     </div>
   );
 }
