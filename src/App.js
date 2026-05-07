@@ -1,21 +1,29 @@
 import { useState } from "react";
 
-function Counter() {
-  const [count, setCount] = useState(0);
-  return (
-    <div>
-      <h1>{count}</h1>
-      <button onClick={() => setCount(count + 1)}>+</button>
-      <button onClick={() => setCount(count > 0 ? count - 1 : 0)}>-</button>
-      <button onClick={() => setCount(0)}>Reset</button>
-    </div>
-  );
-}
 function App() {
+  const [people, setPeople] = useState(["Lucky", "Alex", "Linda"]);
+  const [input, setInput] = useState("");
+
+  function addPerson() {
+    if (input === "") return;
+    setPeople([...people, input]);
+    setInput("");
+  }
+
   return (
     <div>
-      <h1>My Counter</h1>
-      <Counter />
+      <h1>People List</h1>
+      <input
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+        placeholder="Add a name..."
+      />
+      <button onClick={addPerson}>Add</button>
+      <ul>
+        {people.map((person, index) => (
+          <li key={index}>{person}</li>
+        ))}
+      </ul>
     </div>
   );
 }
