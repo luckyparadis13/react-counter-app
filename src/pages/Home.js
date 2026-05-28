@@ -2,7 +2,7 @@ function Home() {
   return (
     <div>
       <h1>Elizabeth "Lucky" Culley</h1>
-      <h2>Junior Web Developer</h2>
+      <h2>Software Engineer</h2>
       <p>
         Based in San Francisco, CA. Passionate about building clean,
         user-focused web applications. Graduate of FullStack Academy and App

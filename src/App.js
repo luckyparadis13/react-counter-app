@@ -4,6 +4,7 @@ import UserContext from "./UserContext";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
+import "./App.css";
 
 function App() {
   const [user] = useState({ name: "Lucky", role: "Junior Developer" });
