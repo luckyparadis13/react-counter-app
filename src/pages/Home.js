@@ -1,13 +1,21 @@
-import { useContext } from "react";
-import UserContext from "../UserContext";
-
 function Home() {
-  const user = useContext(UserContext);
-
   return (
     <div>
-      <h1>Welcome, {user.name}!</h1>
-      <p>{user.role} based in San Francisco.</p>
+      <h1>Elizabeth "Lucky" Culley</h1>
+      <h2>Junior Web Developer</h2>
+      <p>
+        Based in San Francisco, CA. Passionate about building clean,
+        user-focused web applications. Graduate of FullStack Academy and App
+        Academy's AI Engineering course.
+      </p>
+      <h3>What I Build With:</h3>
+      <ul>
+        <li>JavaScript</li>
+        <li>React</li>
+        <li>Node.js</li>
+        <li>HTML & CSS</li>
+        <li>Git & GitHub</li>
+      </ul>
     </div>
   );
 }
