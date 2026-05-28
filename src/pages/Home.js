@@ -1,21 +1,36 @@
 function Home() {
   return (
-    <div>
-      <h1>Elizabeth "Lucky" Culley</h1>
-      <h2>Software Engineer</h2>
-      <p>
-        Based in San Francisco, CA. Passionate about building clean,
-        user-focused web applications. Graduate of FullStack Academy and App
-        Academy's AI Engineering course.
-      </p>
-      <h3>What I Build With:</h3>
-      <ul>
-        <li>JavaScript</li>
-        <li>React</li>
-        <li>Node.js</li>
-        <li>HTML & CSS</li>
-        <li>Git & GitHub</li>
-      </ul>
+    <div className="page">
+      <div className="hero">
+        <h1>ELIZABETH "LUCKY" CULLEY</h1>
+        <h2>Software Engineer</h2>
+        <p>
+          Based in San Francisco, CA. Building clean, user-focused web
+          applications with JavaScript, React, and Node.js.
+        </p>
+      </div>
+
+      <h3>WHAT I BUILD WITH</h3>
+      <div className="skills-grid">
+        <div className="skill-card">
+          <p>JavaScript</p>
+        </div>
+        <div className="skill-card">
+          <p>React</p>
+        </div>
+        <div className="skill-card">
+          <p>Node.js</p>
+        </div>
+        <div className="skill-card">
+          <p>HTML & CSS</p>
+        </div>
+        <div className="skill-card">
+          <p>Git & GitHub</p>
+        </div>
+        <div className="skill-card">
+          <p>MongoDB</p>
+        </div>
+      </div>
     </div>
   );
 }
